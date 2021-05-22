@@ -18,7 +18,10 @@ package editor.cn;//请实现一个函数，把字符串 s 中的每个空格替
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public String replaceSpace(String s) {
+        // 方法一
         // return s.replace(" ", "%20");
+
+        // 方法二
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < s.length(); i++) {
             char ch = s.charAt(i);
