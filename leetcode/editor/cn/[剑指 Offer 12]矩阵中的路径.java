@@ -51,6 +51,7 @@ class Solution {
     public boolean exist(char[][] board, String word) {
         char[] words = word.toCharArray();
 
+        // 深度优先
         // 查找开始位置
         for (int i = 0; i < board.length; i++)
             for (int j = 0; j < board[0].length; j++) {
