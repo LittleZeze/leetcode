@@ -33,7 +33,7 @@
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution10_2 {
     public int numWays(int n) {
 
         // 空间优化

@@ -36,7 +36,7 @@
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution10_1 {
 
 
     public int fib(int n) {
