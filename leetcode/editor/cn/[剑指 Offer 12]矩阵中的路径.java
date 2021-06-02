@@ -47,7 +47,7 @@ import java.util.List;
 import java.util.Set;
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution12 {
     public boolean exist(char[][] board, String word) {
         char[] words = word.toCharArray();
 

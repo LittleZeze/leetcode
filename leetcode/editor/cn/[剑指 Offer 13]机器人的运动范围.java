@@ -25,10 +25,82 @@
 // 👍 292 👎 0
 
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution13 {
+
+    // 广度优先
     public int movingCount(int m, int n, int k) {
 
+        if (k == 0) {
+            return 1;
+        }
+
+        // 向右和向下的数组
+        int[] dx = {1, 0};
+        int[] dy = {0, 1};
+
+        boolean[][] visited = new boolean[m][n];
+        Queue<int[]> queue = new LinkedList<>();
+        queue.offer(new int[]{0, 0});
+        visited[0][0] = true;
+
+        int ans = 1;
+        while (!queue.isEmpty()) {
+            int[] cell = queue.poll();
+            int x = cell[0];
+            int y = cell[1];
+
+            for (int i = 0; i < 2; i++) {
+                int tx = dx[i] + x;
+                int ty = dy[i] + y;
+
+                if (tx >= m || ty >= n || get(tx) + get(ty) > k || visited[tx][ty] == true) {
+                    continue;
+                }
+
+                queue.offer(new int[]{tx, ty});
+                visited[tx][ty] = true;
+                ans++;
+            }
+        }
+
+        return ans;
+    }
+
+
+    // 深度优先
+    /*public int movingCount(int m, int n, int k) {
+        boolean[][] visited = new boolean[m][n];
+        return dfs(0, 0, m, n, k, visited);
+    }
+
+    public int dfs(int i, int j, int m, int n, int k, boolean[][] visited) {
+        if (i >= m || j >= n || get(i) + get(j) > k || visited[i][j]) {
+            return 0;
+        }
+        visited[i][j] = true;
+        return 1 + dfs(i + 1, j, m, n, k, visited) + dfs(i, j + 1, m, n, k, visited);
+    }*/
+
+    public int get(int x) {
+        int sum = 0;
+        while (x != 0) {
+            sum += x % 10;
+            x /= 10;
+        }
+        return sum;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
+
+class Main13 {
+
+    public static void main(String[] args) {
+        Solution13 solution13 = new Solution13();
+        int ans = solution13.movingCount(16, 16, 4);
+        System.out.println(ans);
+    }
+}

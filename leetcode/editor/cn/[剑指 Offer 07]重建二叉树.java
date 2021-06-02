@@ -43,7 +43,7 @@ import java.util.Map;
  *     TreeNode(int x) { val = x; }
  * }
  */
-class Solution {
+class Solution07 {
 
     private Map<Integer, Integer> map;
     public TreeNode reverseTreeNode(int[] preorder, int preorderLeft, int preorderRight,
@@ -104,7 +104,7 @@ class Test {
     public static void main(String[] args) {
         int[] preorder = new int[] {3,9,20,15,7};
         int[] inorder = new int[] {9,3,15,20,7};
-        Solution solution = new Solution();
+        Solution07 solution = new Solution07();
         solution.buildTree(preorder, inorder);
     }
 }
