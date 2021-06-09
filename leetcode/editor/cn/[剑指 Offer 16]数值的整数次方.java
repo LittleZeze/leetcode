@@ -40,7 +40,7 @@
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution16 {
     public double myPow(double x, int n) {
         long N = n;
         return N > 0 ? quickMul(x, N) : 1 / quickMul(x, -N);

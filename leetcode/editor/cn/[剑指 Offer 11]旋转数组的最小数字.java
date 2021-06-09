@@ -31,6 +31,7 @@ class Solution11 {
         while (low < high) {
             int pivot = low + (high - low) / 2;
             if (numbers[pivot] < numbers[high]) {
+                // 不能＋1， 因为nums[pivot]可能就是最小值
                 high = pivot;
             } else if (numbers[pivot] > numbers[high]) {
                 low = pivot + 1;
